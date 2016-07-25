@@ -1,0 +1,31 @@
+{% extends "polls/base.html" %}
+
+{% block content_head %}
+
+<div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" ><a href="/polls">Home</a>
+                    </li>
+                    <li role="presentation" class="active" ><a href="#">Results</a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3 class="text-muted">Polling System</h3>
+        </div>
+
+{% endblock %}
+
+
+{% block content_body %}
+ <h1> {{ question.question_text }} </h1>
+ <ul>
+ {% for choice in question.choice_set.all %}
+     <li> {{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.votes | pluralize }} </li>
+ {% endfor %}
+ </ul>
+
+ <a href = " {% url 'polls:detail' question.id %} " > Vote again? </a>
+
+{% endblock %}
