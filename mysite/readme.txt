@@ -1,11 +1,17 @@
+>>> Django Polling Application <<<
 
->>> Testing the application 
+This is Basic Django Polls Application with BootStrap.
+
+Python2.7 and Django 1.9 are used. Please refer requirement.txt for setting up the project.
+
+
+>>> Testing the application
 
 ++ Run the below command from your project root direcotry(where manage.py presents)
 
 C:\Afiz\GitApps\djangoapps\mysite>python manage.py test polls
 
-++ You should be getting results if everything goes well. 
+++ You should be getting results if everything goes well.
 
 Creating test database for alias 'default'...
 .....
