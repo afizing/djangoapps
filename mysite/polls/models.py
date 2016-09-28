@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 import datetime
 
 from django.db import models
@@ -13,6 +14,9 @@ class Question(models.Model):
     def was_published_recently(self):
       now = timezone.now()
       return now >= self.pub_date >= now-datetime.timedelta(days=1)
+    def get_absolute_url(self):
+      # return "/polls/%i/"%self.id
+      return reverse('polls.views.DetailView.as_view()', args=[self.id])
 
 
 class Choice(models.Model):

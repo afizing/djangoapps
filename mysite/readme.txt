@@ -21,6 +21,11 @@ Ran 5 tests in 0.267s
 OK
 Destroying test database for alias 'default'...
 
+>>> Dynamic url patterns with names:
+<! a href= "{% url 'blog:detail' post.id %}"></a>
+here blog is app name and detail is url name
+ex: url(r'^(?P<post_id>[0-9]+)/$', views.detail, name='detail')
+
 C:\Afiz\GitApps\djangoapps\mysite>python manage.py test polls
 Creating test database for alias 'default'...
 ......
