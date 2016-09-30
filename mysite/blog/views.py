@@ -7,9 +7,9 @@ from .forms import PostForm
 
 # Create your views here.
 def index(request):
-  posts = Post.objects.all().order_by('timestamp')
+  posts = Post.objects.all()# .order_by('timestamp')
   context = {
-  'posts':posts.reverse()
+  'posts':posts # .reverse()
   }
   return render(request, 'blog/index.html', context)
 

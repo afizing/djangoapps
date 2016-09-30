@@ -1,10 +1,10 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-<h3>{{ post.title}}</h3>
-{{ post.content }} </br>
-{{ post.timestamp }}  {{ post.updated }} </br>
+<div class="col-sm-6 col-sm-offset-3">
+<h1>{{ post.title}} <small> {{ post.timestamp }} </small></h1>
+{{ post.content }}
 <a href={% url 'blog:index' %}>return</a>
+</div>
 
-{% include 'blog/messages.html' %}
 {% endblock %}
